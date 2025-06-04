@@ -117,6 +117,17 @@ def test_drive():
     # There is no difference between setting speed or distance negative, both work
     drivetrain.straight(-25,0.8)
     
+
+    
+#end of function
+    return
+
+def speed_run(d, x):
+    # d distance in centimeters
+    # x power -1.0 to 1.0
+    drivetrain.set_effort(x, x)
+    drivetrain.straight(d, x)
+    drivetrain.stop()
 #end of function
     return
     
@@ -126,11 +137,14 @@ blink_and_wait()
 # test drive the functions!   
 test_drive()
 # warn with flshing LED
-blink_and_wait()
 
-polygon(20, 5)
+
+# polygon(20, 5)
 # warn with flshing LED
-blink_and_wait()
+#blink_and_wait()
 
-polygon(100, 5)
+#polygon(100, 5)
+#blink_and_wait()
+
 blink_and_wait()
+speed_run(25, -1.0)
